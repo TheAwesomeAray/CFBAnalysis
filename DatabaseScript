@@ -1,0 +1,268 @@
+USE [master]
+GO
+/****** Object:  Database [CFBAnalysis]    Script Date: 12/11/2015 2:39:07 PM ******/
+CREATE DATABASE [CFBAnalysis]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'CFBAnalysis', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\CFBAnalysis.mdf' , SIZE = 4096KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'CFBAnalysis_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\CFBAnalysis_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [CFBAnalysis] SET COMPATIBILITY_LEVEL = 110
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [CFBAnalysis].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [CFBAnalysis] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET AUTO_CREATE_STATISTICS ON 
+GO
+ALTER DATABASE [CFBAnalysis] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [CFBAnalysis] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [CFBAnalysis] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [CFBAnalysis] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [CFBAnalysis] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET RECOVERY FULL 
+GO
+ALTER DATABASE [CFBAnalysis] SET  MULTI_USER 
+GO
+ALTER DATABASE [CFBAnalysis] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [CFBAnalysis] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [CFBAnalysis] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [CFBAnalysis] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'CFBAnalysis', N'ON'
+GO
+USE [CFBAnalysis]
+GO
+/****** Object:  Schema [Coach]    Script Date: 12/11/2015 2:39:07 PM ******/
+CREATE SCHEMA [Coach]
+GO
+/****** Object:  Schema [Game]    Script Date: 12/11/2015 2:39:07 PM ******/
+CREATE SCHEMA [Game]
+GO
+/****** Object:  Schema [Player]    Script Date: 12/11/2015 2:39:07 PM ******/
+CREATE SCHEMA [Player]
+GO
+/****** Object:  Schema [Team]    Script Date: 12/11/2015 2:39:07 PM ******/
+CREATE SCHEMA [Team]
+GO
+/****** Object:  Table [Coach].[Coach]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Coach].[Coach](
+	[CoachID] [int] NULL,
+	[Name] [nchar](10) NULL,
+	[TeamID] [int] NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [Coach].[CoachesInPositions]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Coach].[CoachesInPositions](
+	[CoachID] [int] NOT NULL,
+	[CoachingPositionID] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [Coach].[Position]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Coach].[Position](
+	[PositionID] [int] NOT NULL,
+	[PositionName] [varchar](100) NOT NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[PlayType]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[PlayType](
+	[PlayTypeID] [int] NOT NULL,
+	[Name] [varchar](100) NOT NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [Game].[Game]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Game].[Game](
+	[GameID] [int] NOT NULL,
+	[Name] [varchar](100) NULL,
+	[Date] [datetime] NOT NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [Game].[Play]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Game].[Play](
+	[PlayID] [nchar](10) NOT NULL,
+	[PlayTypeID] [int] NOT NULL,
+	[Yards] [int] NOT NULL,
+	[PlayerID] [int] NOT NULL,
+	[FirstDown] [bit] NOT NULL,
+	[Points] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [Game].[PlayType]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Game].[PlayType](
+	[PlayTypeID] [int] NULL,
+	[Name] [varchar](100) NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [Game].[TeamsInGames]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Game].[TeamsInGames](
+	[HomeTeam] [bit] NOT NULL,
+	[TeamID] [int] NOT NULL,
+	[GameID] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [Player].[Player]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Player].[Player](
+	[PlayerID] [int] NOT NULL,
+	[TeamID] [int] NOT NULL,
+	[FirstName] [varchar](50) NOT NULL,
+	[LastName] [varchar](50) NOT NULL,
+	[HighSchool] [varchar](100) NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [Player].[Position]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Player].[Position](
+	[PositionID] [int] NULL,
+	[Name] [varchar](50) NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [Team].[Conference]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Team].[Conference](
+	[ConferenceID] [int] NOT NULL,
+	[Name] [nchar](100) NOT NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [Team].[Team]    Script Date: 12/11/2015 2:39:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Team].[Team](
+	[TeamID] [int] NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Mascot] [varchar](100) NULL,
+	[Division] [varchar](25) NULL,
+	[ConferenceID] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [master]
+GO
+ALTER DATABASE [CFBAnalysis] SET  READ_WRITE 
+GO
