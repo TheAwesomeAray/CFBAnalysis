@@ -1,0 +1,12 @@
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\DTO.dll.config
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\DTO.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\DTO.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\Domain.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\EntityFramework.SqlServer.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\EntityFramework.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\Domain.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\EntityFramework.SqlServer.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\bin\Debug\EntityFramework.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\obj\Debug\DTO.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\DTO\obj\Debug\DTO.pdb

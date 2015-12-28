@@ -1,0 +1,16 @@
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\BL.dll.config
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\BL.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\BL.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\Data.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\Domain.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\DTO.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\EntityFramework.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\EntityFramework.SqlServer.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\Data.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\Domain.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\DTO.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\EntityFramework.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\bin\Debug\EntityFramework.SqlServer.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\obj\Debug\BL.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\BL\obj\Debug\BL.pdb

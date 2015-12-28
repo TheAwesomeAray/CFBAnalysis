@@ -1,0 +1,9 @@
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\bin\Debug\Database.dacpac
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\bin\Debug\Database.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\bin\Debug\Database.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\obj\Debug\Model.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\obj\Debug\refactor.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\obj\Debug\postdeploy.sql
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\obj\Debug\predeploy.sql
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\obj\Debug\Database.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\Database\obj\Debug\Database.pdb

@@ -1,0 +1,10 @@
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\Domain.dll.config
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\Domain.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\Domain.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\EntityFramework.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\EntityFramework.SqlServer.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\EntityFramework.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\bin\Debug\EntityFramework.SqlServer.xml
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\obj\Debug\Domain.dll
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\obj\Debug\Domain.pdb
+B:\CFBAnalysis\WebApp\CFBWebScraping\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
